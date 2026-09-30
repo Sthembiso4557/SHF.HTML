@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GAMBU | South African Dining</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4efe7;
+    color:#171512;
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:22px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+
+    background:rgba(20,18,15,.72);
+    backdrop-filter:blur(15px);
+
+    color:white;
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:30px;
+    letter-spacing:5px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.nav-btn{
+    border:1px solid rgba(255,255,255,.7);
+    padding:12px 20px;
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    background:#d6ae6d;
+    color:#171512;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    min-height:700px;
+
+    background:
+    linear-gradient(90deg,
+    rgba(10,9,7,.82),
+    rgba(10,9,7,.25)),
+    url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    padding:0 9%;
+
+    color:white;
+    position:relative;
+}
+
+.hero-content{
+    max-width:800px;
+    animation:heroIn 1.5s ease;
+}
+
+.small-title{
+    text-transform:uppercase;
+    letter-spacing:6px;
+    font-size:12px;
+    margin-bottom:25px;
+    color:#d8b477;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(70px,11vw,160px);
+    line-height:.85;
+    font-weight:500;
+}
+
+.hero h1 span{
+    color:#d6ae6d;
+}
+
+.hero p{
+    max-width:500px;
+    margin-top:35px;
+    font-size:17px;
+    line-height:1.8;
+    color:#e8e3da;
+}
+
+.hero-buttons{
+    margin-top:40px;
+    display:flex;
+    gap:15px;
+}
+
+.button{
+    padding:16px 30px;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+    transition:.3s;
+    display:inline-block;
+    border:none;
+    cursor:pointer;
+}
+
+.gold-button{
+    background:#c49a59;
+    color:#171512;
+}
+
+.gold-button:hover{
+    background:#e0bd80;
+    transform:translateY(-4px);
+}
+
+.outline-button{
+    border:1px solid rgba(255,255,255,.7);
+    color:white;
+}
+
+.outline-button:hover{
+    background:white;
+    color:#171512;
+}
+
+/* FLOATING CIRCLE */
+
+.floating-circle{
+    position:absolute;
+    right:7%;
+    bottom:10%;
+    width:130px;
+    height:130px;
+    border:1px solid rgba(255,255,255,.5);
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    animation:spin 15s linear infinite;
+}
+
+.floating-circle span{
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+    padding:130px 9%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.intro h2{
+    font-family:"Playfair Display",serif;
+    font-size:65px;
+    font-weight:500;
+}
+
+.intro h2 span{
+    color:#a87935;
+}
+
+.intro-text{
+    font-size:17px;
+    line-height:1.9;
+    color:#5e594f;
+}
+
+.signature{
+    margin-top:30px;
+    font-family:"Playfair Display",serif;
+    font-size:30px;
+    font-style:italic;
+}
+
+/* ================= MARQUEE ================= */
+
+.marquee{
+    background:#171512;
+    color:#e2c187;
+    overflow:hidden;
+    padding:18px 0;
+    white-space:nowrap;
+}
+
+.marquee-track{
+    display:inline-block;
+    animation:marquee 20s linear infinite;
+}
+
+.marquee span{
+    margin:0 35px;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:12px;
+}
+
+/* ================= MENU ================= */
+
+.menu-section{
+    padding:130px 7%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-heading small{
+    color:#a87935;
+    text-transform:uppercase;
+    letter-spacing:5px;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:65px;
+    font-weight:500;
+    margin-top:15px;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.menu-card{
+    position:relative;
+    overflow:hidden;
+    height:520px;
+    cursor:pointer;
+}
+
+.menu-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.menu-card:hover img{
+    transform:scale(1.1);
+}
+
+.menu-overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:35px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    transparent 30%,
+    rgba(0,0,0,.85)
+    );
+}
+
+.menu-overlay h3{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+}
+
+.menu-overlay p{
+    margin-top:10px;
+    color:#ddd;
+}
+
+.price{
+    margin-top:15px;
+    color:#d8b477;
+    font-size:18px;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience{
+    min-height:750px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    background:#211f1b;
+    color:white;
+}
+
+.experience-image{
+    background:
+    url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.experience-content{
+    padding:100px 12%;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.experience-content small{
+    color:#d8b477;
+    letter-spacing:5px;
+}
+
+.experience-content h2{
+    font-family:"Playfair Display",serif;
+    font-size:65px;
+    font-weight:500;
+    margin:20px 0;
+}
+
+.experience-content p{
+    line-height:1.9;
+    color:#c7c2b9;
+}
+
+.experience-list{
+    margin-top:40px;
+}
+
+.experience-item{
+    display:flex;
+    gap:20px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.number{
+    color:#d8b477;
+}
+
+/* ================= SIGNATURE DISH ================= */
+
+.signature-dish{
+    padding:140px 8%;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+
+    align-items:center;
+}
+
+.signature-dish-image{
+    position:relative;
+}
+
+.signature-dish-image img{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+}
+
+.dish-badge{
+    position:absolute;
+    right:-35px;
+    top:40px;
+
+    width:120px;
+    height:120px;
+
+    background:#c49a59;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.signature-dish-content small{
+    color:#a87935;
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+.signature-dish-content h2{
+    font-family:"Playfair Display",serif;
+    font-size:65px;
+    line-height:1;
+    margin:20px 0;
+}
+
+.signature-dish-content p{
+    color:#666056;
+    line-height:1.9;
+}
+
+/* ================= AFRICA ================= */
+
+.africa{
+    padding:130px 8%;
+    background:#ded5c6;
+    text-align:center;
+}
+
+.africa h2{
+    font-family:"Playfair Display",serif;
+    font-size:70px;
+    font-weight:500;
+}
+
+.africa p{
+    max-width:650px;
+    margin:25px auto;
+    line-height:1.8;
+    color:#625c52;
+}
+
+.africa-symbol{
+    font-size:90px;
+    margin-top:20px;
+    opacity:.3;
+}
+
+/* ================= RESERVATION ================= */
+
+.reservation{
+    padding:120px 8%;
+    background:#171512;
+    color:white;
+}
+
+.reservation-heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.reservation-heading small{
+    color:#d8b477;
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+.reservation-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:70px;
+    font-weight:500;
+    margin-top:15px;
+}
+
+.reservation-heading p{
+    color:#aaa49b;
+    margin-top:15px;
+}
+
+/* FORM */
+
+.reservation-form{
+    max-width:900px;
+    margin:auto;
+
+    background:#24221e;
+    padding:50px;
+
+    border:1px solid rgba(216,180,119,.25);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.35);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group.full{
+    grid-column:1 / -1;
+}
+
+.form-group label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#d8b477;
+    margin-bottom:10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:16px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:#171512;
+    color:white;
+
+    font-family:"DM Sans",sans-serif;
+    outline:none;
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#c49a59;
+}
+
+.form-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.form-submit{
+    margin-top:30px;
+    text-align:center;
+}
+
+.form-submit button{
+    min-width:230px;
+}
+
+/* SUCCESS MESSAGE */
+
+.success-message{
+    display:none;
+    text-align:center;
+    padding:30px;
+    margin-top:25px;
+
+    border:1px solid #c49a59;
+    color:#e2c187;
+}
+
+.success-message.show{
+    display:block;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0f0e0c;
+    color:white;
+    padding:70px 8% 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+footer h3{
+    font-family:"Playfair Display",serif;
+    font-size:35px;
+}
+
+footer h4{
+    margin-bottom:15px;
+    color:#d8b477;
+}
+
+footer p{
+    color:#aaa49b;
+    line-height:1.8;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:50px;
+    padding-top:25px;
+    color:#777;
+    font-size:12px;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes heroIn{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes marquee{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    nav ul{
+        display:none;
+    }
+
+    nav{
+        padding:20px;
+    }
+
+    .hero{
+        padding:0 7%;
+        min-height:650px;
+    }
+
+    .hero h1{
+        font-size:75px;
+    }
+
+    .floating-circle{
+        display:none;
+    }
+
+    .intro,
+    .experience,
+    .signature-dish{
+        grid-template-columns:1fr;
+    }
+
+    .intro h2,
+    .experience-content h2,
+    .signature-dish-content h2,
+    .section-heading h2,
+    .africa h2,
+    .reservation-heading h2{
+        font-size:48px;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .menu-card{
+        height:450px;
+    }
+
+    .experience-image{
+        height:500px;
+    }
+
+    .signature-dish-image img{
+        height:500px;
+    }
+
+    .dish-badge{
+        right:15px;
+    }
+
+    .reservation-form{
+        padding:25px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<div class="logo">GAMBU</div>
+
+<ul>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#menu">Menu</a>
+</li>
+
+<li>
+<a href="#experience">Experience</a>
+</li>
+
+<li>
+<a href="#story">Our Story</a>
+</li>
+
+</ul>
+
+<a href="#reservation" class="nav-btn">
+Reserve
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="small-title">
+South African Dining Experience
+</div>
+
+<h1>
+Taste<br>
+<span>GAMBU.</span>
+</h1>
+
+<p>
+A modern expression of South African food, culture and fire.
+Traditional flavours transformed into an unforgettable dining experience.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#menu" class="button gold-button">
+Explore Menu
+</a>
+
+<a href="#experience" class="button outline-button">
+Enter GAMBU
+</a>
+
+</div>
+
+</div>
+
+
+<div class="floating-circle">
+
+<span>
+GAMBU • EST. 2026 •
+</span>
+
+</div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro reveal">
+
+<div>
+
+<h2>
+Africa<br>
+on a <span>plate.</span>
+</h2>
+
+</div>
+
+
+<div class="intro-text">
+
+<p>
+GAMBU brings the soul of South Africa into a contemporary dining
+experience. From the fire of the braai to the warmth of traditional
+family recipes, every plate tells a story.
+</p>
+
+<p style="margin-top:25px;">
+
+We don't simply serve food.
+
+<br>
+
+<strong>
+We serve where we come from.
+</strong>
+
+</p>
+
+<div class="signature">
+GAMBU
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= MARQUEE ================= -->
+
+<div class="marquee">
+
+<div class="marquee-track">
+
+<span>South African</span>
+<span>Fire</span>
+<span>Culture</span>
+<span>Heritage</span>
+<span>Modern Dining</span>
+<span>GAMBU</span>
+
+<span>South African</span>
+<span>Fire</span>
+<span>Culture</span>
+<span>Heritage</span>
+<span>Modern Dining</span>
+<span>GAMBU</span>
+
+</div>
+
+</div>
+
+
+<!-- ================= MENU ================= -->
+
+<section class="menu-section" id="menu">
+
+<div class="section-heading reveal">
+
+<small>
+The GAMBU Menu
+</small>
+
+<h2>
+South Africa, reimagined.
+</h2>
+
+</div>
+
+
+<div class="menu-grid">
+
+
+<div class="menu-card reveal">
+
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=90">
+
+<div class="menu-overlay">
+
+<h3>
+GAMBU Braai
+</h3>
+
+<p>
+Premium fire-grilled meat, chakalaka &amp; heritage sides
+</p>
+
+<div class="price">
+R285
+</div>
+
+</div>
+
+</div>
+
+
+<div class="menu-card reveal">
+
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1000&q=90">
+
+<div class="menu-overlay">
+
+<h3>
+Heritage Bowl
+</h3>
+
+<p>
+Slow-cooked flavours inspired by South African home cooking
+</p>
+
+<div class="price">
+R195
+</div>
+
+</div>
+
+</div>
+
+
+<div class="menu-card reveal">
+
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=90">
+
+<div class="menu-overlay">
+
+<h3>
+GAMBU Harvest
+</h3>
+
+<p>
+Seasonal vegetables, grains, herbs and African spices
+</p>
+
+<div class="price">
+R175
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="experience" id="experience">
+
+<div class="experience-image"></div>
+
+
+<div class="experience-content reveal">
+
+<small>
+THE EXPERIENCE
+</small>
+
+<h2>
+Don't just eat.
+<br>
+Experience it.
+</h2>
+
+<p>
+At GAMBU, the kitchen is part of the theatre.
+Watch fire meet food, hear the grill crackle and experience
+South African cooking from a completely different perspective.
+</p>
+
+
+<div class="experience-list">
+
+<div class="experience-item">
+
+<span class="number">
+01
+</span>
+
+<span>
+Live Fire Cooking
+</span>
+
+</div>
+
+
+<div class="experience-item">
+
+<span class="number">
+02
+</span>
+
+<span>
+Chef's Table
+</span>
+
+</div>
+
+
+<div class="experience-item">
+
+<span class="number">
+03
+</span>
+
+<span>
+Heritage Tasting
+</span>
+
+</div>
+
+
+<div class="experience-item">
+
+<span class="number">
+04
+</span>
+
+<span>
+Signature Drinks
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SIGNATURE DISH ================= -->
+
+<section class="signature-dish" id="story">
+
+
+<div class="signature-dish-image reveal">
+
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=90">
+
+<div class="dish-badge">
+Chef's<br>
+Signature
+</div>
+
+</div>
+
+
+<div class="signature-dish-content reveal">
+
+<small>
+THE SIGNATURE
+</small>
+
+<h2>
+The GAMBU
+Plate
+</h2>
+
+<p>
+A celebration of South Africa in one experience.
+Fire-grilled meat, seasonal vegetables, rich sauces,
+heritage spices and textures designed to work together.
+</p>
+
+<br>
+
+<p>
+Every element has a purpose.
+Every flavour has a story.
+</p>
+
+<br>
+
+<a href="#reservation" class="button gold-button">
+Book the Experience
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= AFRICA ================= -->
+
+<section class="africa reveal">
+
+<h2>
+Born in South Africa.
+</h2>
+
+<p>
+Inspired by the people, landscapes, traditions and flavours
+that make South Africa one of the world's most diverse food cultures.
+</p>
+
+<div class="africa-symbol">
+✦
+</div>
+
+</section>
+
+
+<!-- ================= RESERVATION ================= -->
+
+<section class="reservation" id="reservation">
+
+<div class="reservation-heading">
+
+<small>
+THE GAMBU TABLE
+</small>
+
+<h2>
+Reserve Your Table
+</h2>
+
+<p>
+Choose your date, time and number of guests.
+</p>
+
+</div>
+
+
+<!--
+IMPORTANT:
+
+Replace YOUR_FORMSPREE_ID below.
+
+Example:
+
+https://formspree.io/f/abc12345
+
+-->
+
+<form
+class="reservation-form"
+action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+method="POST"
+id="reservationForm"
+>
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label for="name">
+Full Name
+</label>
+
+<input
+type="text"
+id="name"
+name="Name"
+placeholder="Your full name"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">
+Email
+</label>
+
+<input
+type="email"
+id="email"
+name="Email"
+placeholder="your@email.com"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="phone">
+Phone Number
+</label>
+
+<input
+type="tel"
+id="phone"
+name="Phone"
+placeholder="+27 ..."
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="guests">
+Number of Guests
+</label>
+
+<select
+id="guests"
+name="Guests"
+required
+>
+
+<option value="">
+Select guests
+</option>
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="date">
+Date
+</label>
+
+<input
+type="date"
+id="date"
+name="Date"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="time">
+Time
+</label>
+
+<select
+id="time"
+name="Time"
+required
+>
+
+<option value="">
+Select time
+</option>
+
+<option>17:00</option>
+<option>17:30</option>
+<option>18:00</option>
+<option>18:30</option>
+<option>19:00</option>
+<option>19:30</option>
+<option>20:00</option>
+<option>20:30</option>
+<option>21:00</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group full">
+
+<label for="requests">
+Special Requests
+</label>
+
+<textarea
+id="requests"
+name="Special Requests"
+placeholder="Birthday, celebration, dietary request, seating request..."
+></textarea>
+
+</div>
+
+
+</div>
+
+
+<input
+type="hidden"
+name="_subject"
+value="New GAMBU Restaurant Reservation"
+>
+
+
+<div class="form-submit">
+
+<button
+type="submit"
+class="button gold-button"
+>
+Reserve My Table
+</button>
+
+</div>
+
+
+<div
+class="success-message"
+id="successMessage"
+>
+
+<strong>
+Thank you for choosing GAMBU.
+</strong>
+
+<br><br>
+
+Your reservation request has been sent.
+We will contact you to confirm your table.
+
+</div>
+
+
+</form>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+GAMBU
+</h3>
+
+<p>
+Modern South African dining.
+<br>
+Culture. Fire. Flavour.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+VISIT
+</h4>
+
+<p>
+GAMBU Restaurant
+<br>
+South Africa
+<br>
+Dinner · Tuesday–Sunday
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+CONTACT
+</h4>
+
+<p>
+reservations@gambu.co.za
+<br>
++27 00 000 0000
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 GAMBU. All rights reserved.
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* ================= SCROLL REVEAL ================= */
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+
+function revealOnScroll(){
+
+reveals.forEach(element => {
+
+const windowHeight =
+window.innerHeight;
+
+const elementTop =
+element.getBoundingClientRect().top;
+
+if(elementTop < windowHeight - 100){
+
+element.classList.add("active");
+
+}
+
+});
+
+}
+
+
+window.addEventListener(
+"scroll",
+revealOnScroll
+);
+
+revealOnScroll();
+
+
+/* ================= HERO PARALLAX ================= */
+
+window.addEventListener(
+"scroll",
+() => {
+
+const hero =
+document.querySelector(".hero");
+
+const scroll =
+window.scrollY;
+
+hero.style.backgroundPosition =
+`center ${scroll * 0.35}px`;
+
+});
+
+
+/* ================= MOUSE MOVEMENT ================= */
+
+document.addEventListener(
+"mousemove",
+(event) => {
+
+const circle =
+document.querySelector(".floating-circle");
+
+if(!circle) return;
+
+const x =
+(event.clientX / window.innerWidth - .5) * 20;
+
+const y =
+(event.clientY / window.innerHeight - .5) * 20;
+
+circle.style.marginLeft =
+x + "px";
+
+circle.style.marginTop =
+y + "px";
+
+});
+
+
+/* ================= RESERVATION DATE ================= */
+
+const dateInput =
+document.getElementById("date");
+
+const today =
+new Date();
+
+const year =
+today.getFullYear();
+
+const month =
+String(today.getMonth() + 1)
+.padStart(2,"0");
+
+const day =
+String(today.getDate())
+.padStart(2,"0");
+
+dateInput.min =
+`${year}-${month}-${day}`;
+
+
+/* ================= FORM SUBMISSION ================= */
+
+const form =
+document.getElementById("reservationForm");
+
+const success =
+document.getElementById("successMessage");
+
+
+form.addEventListener(
+"submit",
+async function(event){
+
+event.preventDefault();
+
+const submitButton =
+form.querySelector("button");
+
+submitButton.disabled =
+true;
+
+submitButton.textContent =
+"Sending...";
+
+
+try{
+
+const response =
+await fetch(
+form.action,
+{
+method:"POST",
+body:new FormData(form),
+headers:{
+"Accept":"application/json"
+}
+}
+);
+
+
+if(response.ok){
+
+success.classList.add("show");
+
+form.reset();
+
+submitButton.textContent =
+"Reservation Sent";
+
+success.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}else{
+
+submitButton.disabled =
+false;
+
+submitButton.textContent =
+"Reserve My Table";
+
+alert(
+"Something went wrong. Please try again."
+);
+
+}
+
+}catch(error){
+
+submitButton.disabled =
+false;
+
+submitButton.textContent =
+"Reserve My Table";
+
+alert(
+"Please check your internet connection and try again."
+);
+
+}
+
+});
+
+</script>
+
+
+</body>
+</html>
+
